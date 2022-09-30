@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+
+    <h4>Question</h4>
+    <hr>
+    <form action="/update/{{student.id}}" method="POST">
+     {% csrf_token %}
+     <div class="form-gruop">
+         <label for="">Add</label>
+         <input type="text" name="sid" value="{{student.sid}}" class="form-control">
+     </div>
+     <div class="form-gruop">
+         <button class="btn btn-primary" type="submit">Add Record</button>
+         <a href="{% url 'show' %}" class="btn btn-info">Show Details</a>
+     </div>
+    </form>
+ 
+ </div>
+ 
+ 
+ {% endblock content %}
+ 
